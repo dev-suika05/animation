@@ -1,0 +1,30 @@
+.p-text {
+  background-color: lightblue;
+  cursor: pointer;
+
+  &:hover {
+    .-top {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .-btm {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+}
+.p-text_animation {
+  font-size: 60px;
+  font-weight: 800;
+}
+.-top {
+  width: 100%;
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: clip-path .6s cubic-bezier(0.33, 1, 0.68, 1);
+}.-btm {
+  color: #000;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: clip-path .6s cubic-bezier(0.33, 1, 0.68, 1) .2s;
+}
