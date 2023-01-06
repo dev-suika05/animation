@@ -1,0 +1,29 @@
+.p-title {
+  font-size: 80px;
+  background-color: lightblue;
+  cursor: pointer;
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: 0.1em;
+
+    span {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      transition: clip-path .3s cubic-bezier(0.33, 1, 0.68, 1);
+
+      @for $i from 1 through 5 {
+        &:nth-of-type(#{$i}) {
+          transition-delay: calc(0.07s * $i);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    h1 {
+      span {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  }
+}
