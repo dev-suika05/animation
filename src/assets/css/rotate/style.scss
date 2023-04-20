@@ -1,0 +1,30 @@
+.p-title {
+  margin: 0 auto;
+  font-size: 30px;
+  
+  h1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  span {
+    display: block;
+    opacity: 0;
+    transform: rotateY(270deg) translateY(-30px);
+    transition: transform .6s cubic-bezier(0.33, 1, 0.68, 1),opacity .6s cubic-bezier(0.33, 1, 0.68, 1);
+
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}) {
+        transition-delay: calc(.1s * $i);
+      }
+    }
+  }
+  
+  .is-load & {
+  span {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0);
+  }
+  }
+}
